@@ -1,6 +1,7 @@
 $sec1TextColor: #0d319c;
 $sec1CircleColor: #cf1537;
 $sec1RadioOnColor: #f78b1f;
+$sec1ShineColor: #f78b20;
 
 @font-face {
   font-family: 'Lato';
@@ -258,6 +259,7 @@ $sec1RadioOnColor: #f78b1f;
   background: url(./img/bgSec1.png) no-repeat;
   background-size: 100vw 100vh;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   color: $sec1TextColor;
 
@@ -274,24 +276,53 @@ $sec1RadioOnColor: #f78b1f;
     font-size: 2vw;
     font-family: "Lato";
   }
-
   &__item1{
     top: 36vh;
     left: 61vw;
   }
-
   &__item2{
     top: 51vh;
     left: 22vw;
   }
-
   &__item3{
     top: 63vh;
     left: 77vw;
   }
-
   &__item4{
     top: 66vh;
     left: 36vw;
+  }
+
+  &__next{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: pink;
+    height: 11vh;
+    overflow: hidden;
+
+    & span{
+      font-family: "Gotham Pro";
+      font-size: 1.5vw;
+      display: block;
+      text-align: center;
+      margin-top: 1vw;
+    }
+
+    & .arrow{
+      background: url(./img/arrow.png) no-repeat center;
+      margin-top: 5px;
+      height: 2.85vh;
+      background-size: 4.3vw 2.85vh;
+    }
+
+    & .shine{
+      height: 30vh;
+      margin-top: 10px;
+      width: 105vw;
+      border-radius: 50%;
+      background: $sec1ShineColor;
+      box-shadow: 0 -25px 40px $sec1ShineColor;
+    }
   }
 }
