@@ -9,7 +9,7 @@ test: /\.css|\.scss$/,
 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
 },
 { 
-test: /\.ttf$/, 
+test: /\.ttf|\.png$/, 
 use: "file-loader" 
 } 
 ]
