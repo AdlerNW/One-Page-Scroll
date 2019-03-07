@@ -7,7 +7,11 @@ rules: [
 {
 test: /\.css|\.scss$/,
 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-}
+},
+{ 
+test: /\.ttf$/, 
+use: "file-loader" 
+} 
 ]
 },
 plugins: [
