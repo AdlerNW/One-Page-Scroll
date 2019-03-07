@@ -1,3 +1,6 @@
+$sec1TextColor: #0d319c;
+$sec1CircleColor: #cf1537;
+
 @font-face {
   font-family: 'Lato';
   src: local('Lato Hairline'), local('Lato-Hairline'), url('./fonts/Lato/latohairline.woff2') format('woff2'), url('./fonts/Lato/latohairline.woff') format('woff'), url('./fonts/Lato/latohairline.ttf') format('truetype');
@@ -236,8 +239,32 @@
   background: url(./img/bgSec1.png) no-repeat;
   background-size: 100vw 100vh;
   height: 100vh;
+  overflow: hidden;
+  color: $sec1TextColor;
 
   &__itemMain{
-    font-size: 100px;
+    font-size: 5vw;
+    font-family: "Gotham Pro";
+    display: block;
+    width: 78vw;
+    margin: 15vh 0 0 7%;
+  }
+
+  &__item1{
+    font-size: 2vw;
+    font-family: "Lato";
+    margin-left: 60%;
+    margin-top: 50px;
+
+    &_support{
+      position: relative;
+      top: calc(-3.4vh - 1vw);
+      left: -7vh;
+      height: 6.8vh;
+      width: 6.8vh;
+      border-radius: 50%;
+      background-image: url(./img/circle1.png);
+      background-size: 6.8vh 6.8vh;
+    }
   }
 }
