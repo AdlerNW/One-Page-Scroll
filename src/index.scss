@@ -1,5 +1,6 @@
 $sec1TextColor: #0d319c;
 $sec1CircleColor: #cf1537;
+$sec1RadioOnColor: #f78b1f;
 
 @font-face {
   font-family: 'Lato';
@@ -235,6 +236,24 @@ $sec1CircleColor: #cf1537;
   padding: 0;
   box-sizing: border-box;
 }
+
+.radio{
+  position: fixed;
+  right: 2.6vw;
+  top: calc(50vh - 61px);
+  &__button{
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: white;
+    margin-bottom: 14px;
+    cursor: pointer;
+  }
+  &_on{
+    background: $sec1RadioOnColor;
+  }
+}
+
 .section1{
   background: url(./img/bgSec1.png) no-repeat;
   background-size: 100vw 100vh;
@@ -250,21 +269,29 @@ $sec1CircleColor: #cf1537;
     margin: 15vh 0 0 7%;
   }
 
-  &__item1{
+  & .item{
+    position: absolute;
     font-size: 2vw;
     font-family: "Lato";
-    margin-left: 60%;
-    margin-top: 50px;
+  }
 
-    &_support{
-      position: relative;
-      top: calc(-3.4vh - 1vw);
-      left: -7vh;
-      height: 6.8vh;
-      width: 6.8vh;
-      border-radius: 50%;
-      background-image: url(./img/circle1.png);
-      background-size: 6.8vh 6.8vh;
-    }
+  &__item1{
+    top: 36vh;
+    left: 61vw;
+  }
+
+  &__item2{
+    top: 51vh;
+    left: 22vw;
+  }
+
+  &__item3{
+    top: 63vh;
+    left: 77vw;
+  }
+
+  &__item4{
+    top: 66vh;
+    left: 36vw;
   }
 }
