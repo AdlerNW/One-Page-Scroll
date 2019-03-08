@@ -3,7 +3,7 @@ $sec1CircleColor: #cf1537;
 $sec1RadioOnColor: #f78b1f;
 $sec1ShineColor: #f78b20;
 $sec3CircleBg: #404382;
-
+// Подключение шрифтов
 @font-face {
   font-family: 'Lato';
   src: local('Lato Hairline'), local('Lato-Hairline'), url('./fonts/Lato/latohairline.woff2') format('woff2'), url('./fonts/Lato/latohairline.woff') format('woff'), url('./fonts/Lato/latohairline.ttf') format('truetype');
@@ -232,7 +232,7 @@ $sec3CircleBg: #404382;
 	font-weight: 500;
 	font-style: italic;
 }
-
+// конец: Подключение шрифтов
 *{
   margin: 0;
   padding: 0;
@@ -255,7 +255,7 @@ $sec3CircleBg: #404382;
     background: $sec1RadioOnColor;
   }
 }
-
+//Секция 1
 .section1{
   background: url(./img/bgSec1.png) no-repeat;
   background-size: 100vw 100vh;
@@ -328,7 +328,8 @@ $sec3CircleBg: #404382;
     }
   }
 }
-
+//конец: Секция 1
+//Секция 2
 .section2{
   background: url(./img/bgSec2.png) no-repeat;
   background-size: 100vw 100vh;
@@ -380,8 +381,10 @@ $sec3CircleBg: #404382;
     }
   }
 }
-
+//конец: Секция 2
+//Секция 3
 .section3{
+  //Слайд 1 в секции 3
   & .slide1{
     background: url(./img/bgSec3_1.png) no-repeat;
     background-size: 100vw 100vh;
@@ -470,7 +473,8 @@ $sec3CircleBg: #404382;
       font: 500 2.2vw "Lato";
     }
   }
-
+  //конец: Слайд 1 в секции 3
+  //Слайд 2 в секции 3
   & .slide2{
     background: url(./img/bgSec3_2.png) no-repeat;
     background-size: 100vw 100vh;
@@ -554,6 +558,80 @@ $sec3CircleBg: #404382;
       }
     }
 
+    & .path4{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      left: 72.5vw;
+      bottom: 23.5vh;
+      &__text{
+        width: 9vw;
+        margin-left: 1.4vw;
+        margin-top: 0.5vh;
+      }
+      &__number{
+        margin-top: 0.7vh;
+        margin-left: 2vh !important;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Lipid.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+      }
+    }
+
+    & .path5{
+      position: relative;
+      left: 62.2vw;
+      bottom: 20.3vh;
+      &__text{
+        margin-left: 0.5vw;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Muscle.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+      }
+    }
+
+    & .path6{
+      position: relative;
+      left: 47.3vw;
+      bottom: 36.9vh;
+      &__text{
+        margin-left: 1vw;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Liver.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+      }
+    }
+
+    & .path7{
+      position: relative;
+      left: 31.9vw;
+      bottom: 53.5vh;
+      &__text{
+        margin-left: -0.8vw;
+        width: 10vw;
+        text-align: center;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Brain.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+      }
+    }
+
+    & .path8{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      left: 15.9vw;
+      bottom: 89.5vh;
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Kidney.png) no-repeat center;
+        background-size: 5vw 6vh;
+      }
+    }
+
     & .emblem{
       margin-left: 1vw;
       width: 7.8vh;
@@ -568,4 +646,8 @@ $sec3CircleBg: #404382;
       font: 500 2vw "Lato";
     }
   }
+  //конец: Слайд 2 в секции 3
+  //Слайд 3 в секции 3
+  //конец: Слайд 3 в секции 3
 }
+//конец: Секция 3
