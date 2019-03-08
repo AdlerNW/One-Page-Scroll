@@ -2,7 +2,7 @@ $sec1TextColor: #0d319c;
 $sec1CircleColor: #cf1537;
 $sec1RadioOnColor: #f78b1f;
 $sec1ShineColor: #f78b20;
-$sec3_1CircleBg: #404382;
+$sec3CircleBg: #404382;
 
 @font-face {
   font-family: 'Lato';
@@ -383,13 +383,13 @@ $sec3_1CircleBg: #404382;
 
 .section3{
   & .slide1{
-    background: url(./img/bgSec3_1.png) no-repeat;
+    background: url(./img/bgSec3.png) no-repeat;
     background-size: 100vw 100vh;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
     color: white;
-    //display: none;
+    display: none;
 
     & .title{
       display: block;
@@ -428,7 +428,7 @@ $sec3_1CircleBg: #404382;
         margin-top: 1.9vh;
         font: bold 6vw "Lato";
         text-align: center;
-        background: $sec3_1CircleBg;
+        background: $sec3CircleBg;
       }
     }
 
@@ -440,7 +440,7 @@ $sec3_1CircleBg: #404382;
       left: 23.5vw;
       &__emblem{
         margin-top: 2vh;
-        background: $sec3_1CircleBg url(./img/sec3_1Muscle.png) no-repeat center;
+        background: $sec3CircleBg url(./img/sec3Muscle.png) no-repeat center;
         background-size: 6.5vw 5.7vh;
       }
     }
@@ -453,7 +453,7 @@ $sec3_1CircleBg: #404382;
       left: 72vw;
       &__emblem{
         margin-top: 2.6vh;
-        background: $sec3_1CircleBg url(./img/sec3_1Liver.png) no-repeat center;
+        background: $sec3CircleBg url(./img/sec3Liver.png) no-repeat center;
         background-size: 6.3vw 5.5vh;
       }
     }
@@ -461,7 +461,6 @@ $sec3_1CircleBg: #404382;
       width: 10.8vh;
       height: 10.8vh;
       border-radius: 50%;
-      //background: $sec3_1CircleBg;
     }
     & .number{
       font: 600 3.6vw "Lato";
@@ -469,6 +468,104 @@ $sec3_1CircleBg: #404382;
     }
     & .text{
       font: 500 2.2vw "Lato";
+    }
+  }
+
+  & .slide2{
+    background: url(./img/bgSec3_2.png) no-repeat;
+    background-size: 100vw 100vh;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    color: white;
+    & .title{
+      display: block;
+      font-family: "Gotham Pro";
+      font-size: 3vw;
+      color: white;
+      margin-left: 7.3vw;
+      margin-top: 15vh;
+    }
+    & .path0{
+      &__hyperglycemia{
+        text-align: center;
+        position: relative;
+        top: 21vh;
+        left: 32vw;
+        border: 2px solid #fff;
+        width: 37.9vw;
+        height: 18.55vh;
+
+        & span{
+          font: 500 2.5vw "Lato";
+          position: relative;
+          top: 7vh;
+        }
+      }
+    }
+
+    & .path1{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      left: 47.4vw;
+      bottom: 18.6vh;
+      &__emblem{
+        font: bold 6vw "Lato";
+        text-align: center;
+        line-height: 6vw;;
+        background: $sec3CircleBg;
+      }
+    }
+
+    & .path2{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      left: 16.9vw;
+      bottom: 26.3vh;
+      &__text{
+        width: 15vw;
+        text-align: right;
+      }
+      &__emblem{
+        font: 600 3.6vw "Lato";
+        text-align: center;
+        line-height: 5.5vw;
+        background: $sec3CircleBg;
+      }
+    }
+
+    & .path3{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      left: 62.2vw;
+      bottom: 34vh;
+      &__text{
+        width: 9vw;
+        margin-left: 1.5vw;
+      }
+      &__emblem{
+        font: 600 3.6vw "Lato";
+        text-align: center;
+        line-height: 5.5vw;
+        background: $sec3CircleBg;
+      }
+    }
+
+    & .emblem{
+      margin-left: 1vw;
+      width: 7.8vh;
+      height: 7.8vh;
+      border-radius: 50%;
+    }
+    & .number{
+      font: 600 3.6vw "Lato";
+      margin-left: 4.2vh;
+    }
+    & .text{
+      font: 500 2vw "Lato";
     }
   }
 }
