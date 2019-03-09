@@ -674,6 +674,239 @@ $sec3CircleBg: #404382;
         left: 40.6vw;
       }
     }
+
+    & .path1{
+      display: flex;
+      position: relative;
+      left: 41vw;
+      bottom:4vh;
+      &__text{
+        margin-top: 1vh;
+        margin-left: 1vw;
+      }
+      &__emblem{
+        width: 10.75vh !important;
+        height: 10.75vh !important;
+        font: bold 7vw "Lato";
+        text-align: center;
+        line-height: 7vw;;
+        background: $sec3CircleBg;
+      }
+    }
+
+    & .path2{
+      position: relative;
+      left: 33.7vw;
+      top: 5.2vh;
+      &__number{
+        width: 13vw;
+        text-align: right;
+      }
+      &__text{
+        width: 16vw;
+        text-align: right;
+      }
+      &__emblem{
+        position: relative;
+        right: 8.5vw;
+        bottom: 1.5vh;
+        font: 500 1.5vw "Lato";
+        border-radius: 0 !important;
+        height: auto !important;
+        width: 9vh !important;
+      }
+    }
+
+    & .path3{
+      position: relative;
+      left: 52.5vw;
+      bottom: 9.4vh;;
+      &__number{
+        margin: 0 !important;
+      }
+      &__text{
+        width: 16vw;
+        text-align: right;
+      }
+      &__emblem{
+        position: relative;
+        top: 3.3vh;
+        right: 0.3vw;
+        font: 500 1.5vw "Lato";
+        border-radius: 0 !important;
+        height: auto !important;
+        width: 11vh !important;
+      }
+    }
+
+    & .path__insulinResistance{
+      font: 500 1.5vw "Lato";
+      position: relative;
+      bottom: 19vh;
+      left: 73vw;
+    }
+
+    & .path4{
+      position: relative;
+      left: 78vw;
+      bottom: 35.5vh;;
+      &__number{
+        margin: 0 !important;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Lipid.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        top: 8.7vh;
+        right: 8vw;
+      }
+    }
+
+    & .path5{
+      position: relative;
+      left: 78vw;
+      bottom: 30vh;;
+      &__number{
+        margin: 0 !important;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Muscle.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        top: 8.7vh;
+        right: 8vw;
+      }
+    }
+
+    & .path6{
+      position: relative;
+      left: 78vw;
+      bottom: 24.5vh;;
+      &__number{
+        margin: 0 !important;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Liver.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        top: 8.7vh;
+        right: 8vw;
+      }
+    }
+
+    & .path7{
+      position: relative;
+      left: 77vw;
+      bottom: 88vh;
+      &__number{
+        margin: 0 !important;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Brain.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        right: 8vw;
+        bottom: 8vh;
+      }
+    }
+
+    & .path8{
+      position: relative;
+      left: 13vw;
+      bottom: 106vh;
+      &__number{
+        text-align: right;
+        width: 13vh;
+      }
+      &__text{
+        width: 17.2vh;
+        text-align: right;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Intestines.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        left: 13vw;
+        bottom: 9.5vh;
+      }
+    }
+
+    & .path9{
+      position: relative;
+      left: 3vw;
+      bottom: 113vh;
+      &__number{
+        text-align: right;
+        width: 26vh;
+      }
+      &__text{
+        width: 30.2vh;
+        text-align: right;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Bacterium.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        left: 23vw;
+        bottom: 9.5vh;
+      }
+    }
+
+    & .path10{
+      position: relative;
+      left: 13vw;
+      bottom: 114vh;
+      &__number{
+        text-align: right;
+        width: 13vh;
+      }
+      &__text{
+        width: 17.2vh;
+        text-align: right;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Stomach.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        left: 13vw;
+        bottom: 7vh;
+      }
+    }
+
+    & .path11{
+      position: relative;
+      left: 34.5vw;
+      bottom: 117vh;
+      &__number{
+        text-align: right;
+        width: 13vh;
+      }
+      &__text{
+        width: 17.2vh;
+        text-align: right;
+      }
+      &__emblem{
+        background: $sec3CircleBg url(./img/sec3Kidney.png) no-repeat center;
+        background-size: 4.5vw 5.86vh;
+        position: relative;
+        left: 13vw;
+        bottom: 9vh;
+      }
+    }
+    
+    & .emblem{
+      margin-left: 1vw;
+      width: 7.8vh;
+      height: 7.8vh;
+      border-radius: 50%;
+    }
+    & .number{
+      font: 600 3.6vw "Lato";
+      margin-left: 4.2vh;
+    }
+    & .text{
+      font: 500 2vw "Lato";
+    }
   }
   //конец: Слайд 3 в секции 3
 }
