@@ -404,6 +404,8 @@ $sec3CircleBg: #404382;
     width: 100vw;
     overflow: hidden;
     color: white;
+    position: relative;
+    right: 100vw;
 
     & .title{
       display: block;
@@ -493,7 +495,8 @@ $sec3CircleBg: #404382;
     width: 100vw;
     overflow: hidden;
     color: white;
-    display: none;
+    position: relative;
+    bottom: 100vh;
     & .title{
       display: block;
       font-family: "Gotham Pro";
@@ -667,7 +670,9 @@ $sec3CircleBg: #404382;
     width: 100vw;
     overflow: hidden;
     color: white;
-    display: none;
+    position: relative;
+    bottom: 200vh;
+    left: 100vw;
     & .title{
       display: block;
       font-family: "Gotham Pro";
