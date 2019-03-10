@@ -1,6 +1,5 @@
 $sec1TextColor: #0d319c;
 $sec1CircleColor: #cf1537;
-$sec1RadioOnColor: #f78b1f;
 $sec1ShineColor: #f78b20;
 $sec3CircleBg: #404382;
 // Подключение шрифтов
@@ -239,10 +238,15 @@ $sec3CircleBg: #404382;
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar { 
+  display: none; 
+}
+
 .radio{
   position: fixed;
   right: 2.6vw;
   top: calc(50vh - 61px);
+  z-index: 9999;
   &__button{
     width: 27px;
     height: 27px;
@@ -251,9 +255,17 @@ $sec3CircleBg: #404382;
     margin-bottom: 14px;
     cursor: pointer;
   }
-  &_on{
-    background: $sec1RadioOnColor;
-  }
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  bottom: 0;
+  -webkit-transition: bottom 0.5s linear;
+  -moz-transition: bottom 0.5s linear;
+  -o-transition: bottom 0.5s linear;
+  transition: bottom 0.5s linear;
 }
 //Секция 1
 .section1{
@@ -263,7 +275,6 @@ $sec3CircleBg: #404382;
   width: 100vw;
   overflow: hidden;
   color: $sec1TextColor;
-  //display: none;
 
   &__itemMain{
     font-size: 5vw;
@@ -336,7 +347,6 @@ $sec3CircleBg: #404382;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  //display: none;
 
   &__itemMain{
     font-size: 5vw;
@@ -385,6 +395,8 @@ $sec3CircleBg: #404382;
 //Секция 3
 .section3{
   //Слайд 1 в секции 3
+  display: flex;
+  overflow: hidden;
   & .slide1{
     background: url(./img/bgSec3_1.png) no-repeat;
     background-size: 100vw 100vh;
@@ -392,7 +404,6 @@ $sec3CircleBg: #404382;
     width: 100vw;
     overflow: hidden;
     color: white;
-    //display: none;
 
     & .title{
       display: block;
@@ -482,7 +493,7 @@ $sec3CircleBg: #404382;
     width: 100vw;
     overflow: hidden;
     color: white;
-    //display: none;
+    display: none;
     & .title{
       display: block;
       font-family: "Gotham Pro";
@@ -656,6 +667,7 @@ $sec3CircleBg: #404382;
     width: 100vw;
     overflow: hidden;
     color: white;
+    display: none;
     & .title{
       display: block;
       font-family: "Gotham Pro";
