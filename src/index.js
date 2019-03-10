@@ -17,6 +17,7 @@ window.onload = function () {
   radioButtons[1].addEventListener('click', showSection2);
   radioButtons[2].addEventListener('click', showSection3);
   document.addEventListener("keydown", keyDownHandler);
+  document.addEventListener("wheel", mouseScroll);
 
   section2.style.display = 'none';
   section3.style.display = 'none';
@@ -80,15 +81,45 @@ function hiddenSec2and3(){
 
 function keyDownHandler(e) {
   if (e.keyCode == 40) {
-    switch (activeSection) {
-      case 1:
-        showSection2();
-        break;
-      case 2:
-        showSection3()
-        break;
-      case 3:
-        break;
-    }
+    choiceSectionDirectionDown();
+  }
+
+  if (e.keyCode == 38) {
+    choiceSectionDirectionUp();
+  }
+}
+
+function mouseScroll(e){
+  let direction = e.deltaY;
+  if (direction > 0){
+    choiceSectionDirectionDown()
+  } else {
+    choiceSectionDirectionUp()
+  }
+}
+
+function choiceSectionDirectionUp(){
+  switch (activeSection) {
+    case 1:
+      break;
+    case 2:
+      showSection1();
+      break;
+    case 3:
+      showSection2();
+      break;
+  }
+}
+
+function choiceSectionDirectionDown(){
+  switch (activeSection) {
+    case 1:
+      showSection2();
+      break;
+    case 2:
+      showSection3();
+      break;
+    case 3:
+      break;
   }
 }
