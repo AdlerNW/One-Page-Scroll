@@ -262,10 +262,10 @@ $sec3CircleBg: #404382;
   height: 100vh;
   position: relative;
   bottom: 0;
-  -webkit-transition: bottom 0.5s linear;
-  -moz-transition: bottom 0.5s linear;
-  -o-transition: bottom 0.5s linear;
-  transition: bottom 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 //Секция 1
 .section1{
@@ -360,7 +360,7 @@ $sec3CircleBg: #404382;
 
   &__next{
     position: absolute;
-    bottom: 0;
+    bottom: -100vh;
     width: 100%;
     height: 11vh;
     overflow: hidden;
@@ -406,7 +406,10 @@ $sec3CircleBg: #404382;
     color: white;
     position: relative;
     right: 100vw;
-
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
     & .title{
       display: block;
       font-family: "Gotham Pro";
@@ -496,7 +499,12 @@ $sec3CircleBg: #404382;
     overflow: hidden;
     color: white;
     position: relative;
+    left: 0;
     bottom: 100vh;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
     & .title{
       display: block;
       font-family: "Gotham Pro";
@@ -673,6 +681,10 @@ $sec3CircleBg: #404382;
     position: relative;
     bottom: 200vh;
     left: 100vw;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
     & .title{
       display: block;
       font-family: "Gotham Pro";
