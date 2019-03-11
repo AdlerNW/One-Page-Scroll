@@ -2,6 +2,7 @@ $sec1TextColor: #0d319c;
 $sec1CircleColor: #cf1537;
 $sec1ShineColor: #f78b20;
 $sec3CircleBg: #404382;
+$toggleBg: #435063;
 // Подключение шрифтов
 @font-face {
   font-family: 'Lato';
@@ -266,6 +267,18 @@ $sec3CircleBg: #404382;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
+}
+
+#toggle{
+  background-image: linear-gradient(to bottom, transparent 0%, transparent 28%, $toggleBg 28%, $toggleBg 43%, transparent 43%, transparent 100%);
+  background-size: cover;
+  background-position: center;
+  display: none;
+  overflow: visible;
+  position: fixed;
+  top: 682px;
+  left: 192px;
+  z-index: 9999;
 }
 //Секция 1
 .section1{
