@@ -2,6 +2,9 @@ import "./index.scss";
 let radioButtons = [],
     activeSection = 1,
     activeSlide = 2,
+    relayX = 298,
+    relayY = 0,
+    targetLocked = false,
     container = null,
     section1 = null,
     section2 = null,
@@ -10,7 +13,12 @@ let radioButtons = [],
     nextOnSec2 = null,
     slide1 = null,
     slide2 = null,
-    slide3 = null;
+    slide3 = null,
+    toggle = null,
+    ctx = null,
+    relay = new Image(),
+    relayWidth = 44,
+    relayHeight = 56;
 
 window.onload = function () {
   radioButtons = document.querySelectorAll('.radio__button');
@@ -23,6 +31,8 @@ window.onload = function () {
   slide1 = document.querySelector('.slide1');
   slide2 = document.querySelector('.slide2');
   slide3 = document.querySelector('.slide3');
+  toggle = document.getElementById("toggle");
+  ctx = toggle.getContext("2d");
 
   radioButtons[0].addEventListener('click', showSection1);
   radioButtons[1].addEventListener('click', showSection2);
@@ -34,9 +44,63 @@ window.onload = function () {
 
   document.addEventListener("wheel", mouseScroll);
 
+  toggle.addEventListener('mousedown', targetLock);
+  toggle.addEventListener('mouseup', targetUnlock);
+  toggle.addEventListener('mousemove', move);
+
   section2.style.display = 'none';
   section3.style.display = 'none';
   radioButtons[0].style.background = '#f78b1f';
+
+  relay.src = './src/img/polygon.png';
+
+  drawYears();
+  setInterval(relayPosition, 10);
+}
+
+relay.onload = function() {
+  ctx.drawImage(relay, relayX, relayY, relayWidth, relayHeight); 
+}
+
+function targetLock(e){
+  if (e.pageX < relayX + relayWidth + toggle.offsetLeft && e.pageX > relayX - relayWidth +
+    toggle.offsetLeft && e.pageY < relayY + relayHeight + toggle.offsetTop &&
+    e.pageY > relayY - relayHeight + toggle.offsetTop){
+    targetLocked = true;
+  }
+}
+
+function targetUnlock(){
+  targetLocked = false;
+}
+
+function move(e){
+  if (targetLocked){
+    if (e.pageX - toggle.offsetLeft - relayWidth / 2 >= 0 && e.pageX - toggle.offsetLeft - relayWidth / 2 < toggle.width - relayWidth){
+      relayX = e.pageX - toggle.offsetLeft - relayWidth / 2;
+    }
+  }
+ }
+
+function relayPosition(e){
+  if (targetLocked){
+    ctx.clearRect(0, 0, toggle.width, relayHeight);
+    ctx.drawImage(relay, relayX, relayY, relayWidth, relayHeight);
+    if (relayX < 213) showSlide1();
+    if (relayX > 212 && relayX < 427) showSlide2();
+    if (relayX > 426) showSlide3();
+    console.log(relayX);
+  }
+}
+
+function drawYears(){
+  ctx.beginPath();
+  ctx.font = "20px Gotham Pro";
+  ctx.fillStyle = "white";
+  ctx.fillText("1988", 0, toggle.height - 5);
+  ctx.fillText("2009", (toggle.width - 45) / 2, toggle.height - 5);
+  ctx.fillText("2016", toggle.width - 45, toggle.height - 5);
+  ctx.closePath();
 }
 
 function showSection1() {
@@ -46,6 +110,8 @@ function showSection1() {
     container.style.bottom = '0vh';
     section1.style.display = 'block';
     setTimeout(hiddenSec2and3, 500);
+
+    setTimeout("toggle.style.display = 'none'", 100);
 
     radioButtonOn(0);
   }
@@ -60,6 +126,8 @@ function showSection2() {
     section2.style.display = 'block';
     setTimeout(hiddenSec3, 500);
 
+    setTimeout("toggle.style.display = 'none'", 100);
+
     radioButtonOn(1);
   }
 }
@@ -72,6 +140,8 @@ function showSection3() {
     section1.style.display = 'block';
     section2.style.display = 'block';
     section3.style.display = 'block';
+
+    setTimeout("toggle.style.display = 'block'", 400);
 
     radioButtonOn(2);
   }
