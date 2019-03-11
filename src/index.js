@@ -45,8 +45,11 @@ window.onload = function () {
   document.addEventListener("wheel", mouseScroll);
 
   toggle.addEventListener('mousedown', targetLock);
+  toggle.addEventListener('touchstart', targetLock)
   toggle.addEventListener('mouseup', targetUnlock);
+  toggle.addEventListener('touchend', targetUnlock);
   toggle.addEventListener('mousemove', move);
+  toggle.addEventListener('touchmove', move);
 
   section2.style.display = 'none';
   section3.style.display = 'none';
@@ -83,14 +86,20 @@ function move(e){
  }
 
 function relayPosition(e){
-  if (targetLocked){
-    ctx.clearRect(0, 0, toggle.width, relayHeight);
-    ctx.drawImage(relay, relayX, relayY, relayWidth, relayHeight);
-    if (relayX < 213) showSlide1();
-    if (relayX > 212 && relayX < 427) showSlide2();
-    if (relayX > 426) showSlide3();
-    console.log(relayX);
-  }
+  ctx.clearRect(0, 0, toggle.width, relayHeight);
+  ctx.drawImage(relay, relayX, relayY, relayWidth, relayHeight);
+  if (relayX < 213) showSlide1();
+  if (relayX > 212 && relayX < 427) showSlide2();
+  if (relayX > 426) showSlide3();
+  drawLine();
+}
+
+function drawLine(){
+  ctx.beginPath();
+  ctx.rect(0, 22, relayX + relayWidth / 2, 13);
+  ctx.fillStyle = "#d1eaff";
+  ctx.fill();
+  ctx.closePath();
 }
 
 function drawYears(){
@@ -201,9 +210,11 @@ function keyDownHandler(e) {
       switch(activeSlide) {
         case 1:
           showSlide2();
+          relayX = (toggle.width - relayWidth) / 2;
           break;
         case 2:
           showSlide3();
+          relayX = toggle.width - relayWidth;
           break;
         case 3:
           break;
@@ -222,9 +233,11 @@ function keyDownHandler(e) {
           break;
         case 2:
           showSlide1();
+          relayX = 0;
           break;
         case 3:
           showSlide2();
+          relayX = (toggle.width - relayWidth) / 2;
           break;
       }
     }
