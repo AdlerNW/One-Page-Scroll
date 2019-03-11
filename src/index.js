@@ -1,10 +1,16 @@
 import "./index.scss";
 let radioButtons = [],
     activeSection = 1,
+    activeSlide = 2,
     container = null,
     section1 = null,
     section2 = null,
-    section3 = null;
+    section3 = null,
+    nextOnSec1 = null,
+    nextOnSec2 = null,
+    slide1 = null,
+    slide2 = null,
+    slide3 = null;
 
 window.onload = function () {
   radioButtons = document.querySelectorAll('.radio__button');
@@ -12,11 +18,20 @@ window.onload = function () {
   section1 = document.querySelector('.section1');
   section2 = document.querySelector('.section2');
   section3 = document.querySelector('.section3');
+  nextOnSec1 = document.querySelector('.section1__next');
+  nextOnSec2 = document.querySelector('.section2__next');
+  slide1 = document.querySelector('.slide1');
+  slide2 = document.querySelector('.slide2');
+  slide3 = document.querySelector('.slide3');
 
   radioButtons[0].addEventListener('click', showSection1);
   radioButtons[1].addEventListener('click', showSection2);
   radioButtons[2].addEventListener('click', showSection3);
+  nextOnSec1.addEventListener('click', showSection2);
+  nextOnSec2.addEventListener('click', showSection3);
+
   document.addEventListener("keydown", keyDownHandler);
+
   document.addEventListener("wheel", mouseScroll);
 
   section2.style.display = 'none';
@@ -62,6 +77,33 @@ function showSection3() {
   }
 }
 
+function showSlide1() {
+  if (activeSlide !== 1) {
+    activeSlide = 1;
+    slide1.style.right = '0';
+    slide2.style.left = '100vw';
+    slide3.style.left = '100vw';
+  }
+}
+
+function showSlide2() {
+  if (activeSlide !== 2) {
+    activeSlide = 2;
+    slide1.style.right = '100vw';
+    slide2.style.left = '0';
+    slide3.style.left = '100vw';
+  }
+}
+
+function showSlide3() {
+  if (activeSlide !== 3) {
+    activeSlide = 3;
+    slide1.style.right = '100vw';
+    slide2.style.left = '-100vw';
+    slide3.style.left = '0';
+  }
+}
+
 function radioButtonOn(num){
   for (let i = 0; i < radioButtons.length; i++){
     radioButtons[i].style.background = 'white';
@@ -84,8 +126,38 @@ function keyDownHandler(e) {
     choiceSectionDirectionDown();
   }
 
+  if (e.keyCode == 39) {
+    if (activeSection == 3){
+      switch(activeSlide) {
+        case 1:
+          showSlide2();
+          break;
+        case 2:
+          showSlide3();
+          break;
+        case 3:
+          break;
+      }
+    }
+  }
+
   if (e.keyCode == 38) {
     choiceSectionDirectionUp();
+  }
+
+  if (e.keyCode == 37) {
+    if (activeSection == 3){
+      switch(activeSlide) {
+        case 1:
+          break;
+        case 2:
+          showSlide1();
+          break;
+        case 3:
+          showSlide2();
+          break;
+      }
+    }
   }
 }
 
