@@ -45,11 +45,11 @@ window.onload = function () {
   document.addEventListener("wheel", mouseScroll);
 
   toggle.addEventListener('mousedown', targetLock);
-  toggle.addEventListener('touchstart', targetLock)
+  toggle.addEventListener('touchstart', targetLockOnDesktop)
   toggle.addEventListener('mouseup', targetUnlock);
   toggle.addEventListener('touchend', targetUnlock);
   toggle.addEventListener('mousemove', move);
-  toggle.addEventListener('touchmove', move);
+  toggle.addEventListener('touchmove', moveOnDesktop);
 
   section2.style.display = 'none';
   section3.style.display = 'none';
@@ -73,6 +73,15 @@ function targetLock(e){
   }
 }
 
+function targetLockOnDesktop(e){
+  let touch = e.changedTouches[0];
+  if (touch.pageX < relayX + relayWidth + toggle.offsetLeft && touch.pageX > relayX - relayWidth +
+    toggle.offsetLeft && touch.pageY < relayY + relayHeight + toggle.offsetTop &&
+    touch.pageY > relayY - relayHeight + toggle.offsetTop){
+    targetLocked = true;
+  }
+}
+
 function targetUnlock(){
   targetLocked = false;
 }
@@ -83,7 +92,16 @@ function move(e){
       relayX = e.pageX - toggle.offsetLeft - relayWidth / 2;
     }
   }
- }
+}
+
+function moveOnDesktop(e){
+  let touch = e.changedTouches[0];
+  if (targetLocked){
+    if (touch.pageX - toggle.offsetLeft - relayWidth / 2 >= 0 && touch.pageX - toggle.offsetLeft - relayWidth / 2 < toggle.width - relayWidth){
+      relayX = touch.pageX - toggle.offsetLeft - relayWidth / 2;
+    }
+  }
+}
 
 function relayPosition(e){
   ctx.clearRect(0, 0, toggle.width, relayHeight);
