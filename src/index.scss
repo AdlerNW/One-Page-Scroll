@@ -411,6 +411,7 @@ $toggleBg: #435063;
   //Слайд 1 в секции 3
   display: flex;
   overflow: hidden;
+  height: 100vh;
   & .slide1{
     background: url(./img/bgSec3_1.png) no-repeat;
     background-size: 100vw 100vh;
