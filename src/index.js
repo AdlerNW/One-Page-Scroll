@@ -1,4 +1,5 @@
 import "./index.scss";
+import img from "./img/polygon.png";
 let radioButtons = [],
     activeSection = 1,
     activeSlide = 2,
@@ -55,15 +56,15 @@ window.onload = function () {
   section3.style.display = 'none';
   radioButtons[0].style.background = '#f78b1f';
 
-  relay.src = './src/img/polygon.png';
+  relay.src = img;
 
   drawYears();
   setInterval(relayPosition, 10);
 }
 
-relay.onload = function() {
-  ctx.drawImage(relay, relayX, relayY, relayWidth, relayHeight); 
-}
+ relay.onload = function() {
+   ctx.drawImage(relay, relayX, relayY, relayWidth, relayHeight); 
+ }
 
 function targetLock(e){
   if (e.pageX < relayX + relayWidth + toggle.offsetLeft && e.pageX > relayX - relayWidth +
@@ -103,7 +104,7 @@ function moveOnDesktop(e){
   }
 }
 
-function relayPosition(e){
+function relayPosition(){
   ctx.clearRect(0, 0, toggle.width, relayHeight);
   ctx.drawImage(relay, relayX, relayY, relayWidth, relayHeight);
   if (relayX < 213) showSlide1();
